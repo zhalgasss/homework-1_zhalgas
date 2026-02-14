@@ -7,19 +7,50 @@ import rpg.equipment.factory.*;
 public class Main {
 
     public static void main(String[] args) {
+// mage
 
-        CharacterFactory factory = new MageFactory();
-        Character character = factory.createCharacter("Gandalf");
+        Character mage = new MageFactory().createCharacter("Zhalgas");
+        Character warrior = new WarriorFactory().createCharacter("Asanali");
+        Character archer = new ArcherFactory().createCharacter("Adilkhan");
 
-        System.out.println(character.getStats());
-        character.useSpecialAbility();
+        System.out.println("");
 
-        EquipmentFactory equipmentFactory = new MagicEquipmentFactory();
+        System.out.println(mage.getStats());
+        System.out.println(warrior.getStats());
+        System.out.println(archer.getStats());
+
+        System.out.println("");
+
+        mage.useSpecialAbility();
+        warrior.useSpecialAbility();
+        archer.useSpecialAbility();
+
+        System.out.println("");
+
+        EquipmentFactory mage1 = new MagicEquipmentFactory();
+        EquipmentFactory warrior1 = new MedievalEquipmentFactory();
+        EquipmentFactory archer1 = new RangerEquipmentFactory();
 
         System.out.println("Weapon: " +
-                equipmentFactory.createWeapon().getDescription());
+                mage1.createWeapon().getDescription());
 
         System.out.println("Armor: " +
-                equipmentFactory.createArmor().getDescription());
+                mage1.createArmor().getDescription());
+
+        System.out.println("");
+
+        System.out.println("Weapon: " +
+                warrior1.createWeapon().getDescription());
+
+        System.out.println("Armor: " +
+                warrior1.createArmor().getDescription());
+
+        System.out.println("");
+
+        System.out.println("Weapon: " +
+                archer1.createWeapon().getDescription());
+
+        System.out.println("Armor: " +
+                archer1.createArmor().getDescription());
     }
 }
